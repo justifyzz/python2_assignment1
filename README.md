@@ -1,42 +1,33 @@
+# Python2-Assignment-1
+
 ## Title
-ToDo app with authentication in django
+Assignment_1 login Todo app
 
-
-
-##
-Installation
-
+##Installation
+```
 pip install django
-
-##
-Usage
-
+```
+##Usage
+```
 Import django.urls
-
 import Views
-
 import models
+```
 
-
-
-
-##
-Example
-
+##Example
+```
 urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('register/', RegisterPage.as_view(), name='register'),
-    ]
-    
-    
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('base.urls')),
-]    
 
+    path('', TaskList.as_view(), name='tasks'),
+    path('task/<int:pk>/', TaskDetail.as_view(), name='task'),
+    path('task-create/', TaskCreate.as_view(), name='task-create'),
+    path('task-update/<int:pk>/', TaskUpdate.as_view(), name='task-update'),
+    path('task-delete/<int:pk>/', DeleteView.as_view(), name='task-delete'),
+    path('task-reorder/', TaskReorder.as_view(), name='task-reorder'),
+]
+```
 
-
-![image](https://user-images.githubusercontent.com/79367834/149776401-0634b0fc-131c-4239-8bc6-9b2c8cd36d97.png)
-![image](https://user-images.githubusercontent.com/79367834/149776591-54e9a36a-e689-49b4-b29a-2282ae77acc0.png)
 
