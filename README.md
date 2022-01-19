@@ -3,18 +3,18 @@
 ## Title
 Assignment_1 login Todo app
 
-##Installation
+## Installation
 ```
 pip install django
 ```
-##Usage
+## Usage
 ```
 Import django.urls
 import Views
 import models
 ```
 
-##Example
+## Examples
 ```
 urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
